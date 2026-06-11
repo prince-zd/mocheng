@@ -523,13 +523,17 @@ main > section {
     overflow: hidden;
   }
 
-  .generator-editor-panel {
+  .generator-editor-panel:not(.hidden) {
     display: flex !important;
     flex: 1 1 auto;
     height: auto;
     min-height: 0;
     flex-direction: column;
     overflow: hidden;
+  }
+
+  .generator-editor-panel.hidden {
+    display: none !important;
   }
 
   .generator-editor-form {
