@@ -518,7 +518,7 @@ main > section {
   .moyun-generator-grid {
     display: flex !important;
     flex-direction: column;
-    height: calc(100svh - 150px);
+    height: calc(100svh - 96px);
     min-height: 0;
     overflow: hidden;
   }
@@ -613,6 +613,12 @@ main > section {
   .generator-mobile-actions {
     flex: 0 0 auto;
     margin-top: auto;
+  }
+
+  .generator-mobile-actions > button,
+  .generator-mobile-actions > .grid > button {
+    height: 3rem;
+    min-height: 3rem;
   }
 
   .paper-texture.single-mode-paper {
