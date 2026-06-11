@@ -532,6 +532,8 @@ main > section {
   .generator-editor-form {
     flex: 1 1 auto;
     min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .generator-editor-form > * {
@@ -557,6 +559,11 @@ main > section {
   .generator-save-control {
     flex: 0 0 auto;
     margin-top: auto;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    padding-top: 0.75rem;
+    background: linear-gradient(180deg, rgba(247, 244, 237, 0), rgba(247, 244, 237, 0.96) 34%);
   }
 
   .generator-editor-panel h1 {
