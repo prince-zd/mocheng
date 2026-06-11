@@ -540,15 +540,16 @@ main > section {
 
   .generator-text-field {
     display: flex !important;
-    flex: 1 1 auto !important;
-    min-height: 0;
+    flex: 0 0 auto !important;
+    min-height: auto;
     flex-direction: column;
+    overflow: visible;
   }
 
   .generator-textarea {
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 92px !important;
+    flex: 0 0 auto;
+    height: clamp(104px, 18svh, 148px) !important;
+    min-height: 104px !important;
     overflow-y: auto;
     resize: none;
   }
