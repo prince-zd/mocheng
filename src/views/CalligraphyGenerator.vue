@@ -218,7 +218,7 @@
       </div>
 
       <div class="generator-preview-actions mt-4">
-        <div class="grid grid-cols-3 gap-3 sm:hidden">
+        <div class="hidden grid-cols-3 gap-3 sm:hidden">
           <button
             v-if="previewMode === 'single'"
             type="button"
@@ -403,7 +403,7 @@
           </button>
           <button
             type="button"
-            class="flex h-12 w-full items-center justify-center rounded bg-cinnabar px-4 font-semibold text-white shadow transition hover:bg-cinnabar/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 lg:hidden"
+            class="hidden h-12 w-full items-center justify-center rounded bg-cinnabar px-4 font-semibold text-white shadow transition hover:bg-cinnabar/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 lg:hidden"
               :disabled="isGenerating || !hasUserText"
               @click="generatePreview"
           >
@@ -413,6 +413,48 @@
         </div>
       </div>
     </aside>
+
+    <div class="generator-mobile-actions lg:hidden">
+      <button
+        v-if="mobilePanel === 'edit'"
+        type="button"
+        class="flex h-12 w-full items-center justify-center rounded bg-cinnabar px-4 font-semibold text-white shadow transition hover:bg-cinnabar/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+        :disabled="isGenerating || !hasUserText"
+        @click="generatePreview"
+      >
+        <span v-if="isGenerating" class="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+        展卷一观
+      </button>
+
+      <div v-else class="grid grid-cols-3 gap-3">
+        <button
+          v-if="previewMode === 'single'"
+          type="button"
+          class="flex h-12 items-center justify-center rounded border border-ink/15 bg-white px-3 text-sm font-semibold transition hover:border-cinnabar hover:text-cinnabar active:scale-95 disabled:opacity-60"
+          :disabled="isExporting"
+          @click="savePracticeCard"
+        >
+          留作临帖
+        </button>
+        <button
+          v-else
+          type="button"
+          class="flex h-12 items-center justify-center rounded border border-ink/15 bg-white px-3 text-sm font-semibold transition hover:border-cinnabar hover:text-cinnabar active:scale-95 disabled:opacity-60"
+          :disabled="isExporting"
+          @click="exportPng"
+        >
+          下载墨宝
+        </button>
+        <button
+          type="button"
+          class="col-span-2 flex h-12 items-center justify-center rounded bg-cinnabar px-3 text-sm font-semibold text-white transition hover:bg-cinnabar/90 hover:text-white active:scale-95 disabled:opacity-60"
+          :disabled="!hasUserText"
+          @click="saveCurrentWork"
+        >
+          收入墨匣
+        </button>
+      </div>
+    </div>
 
     <Transition name="sheet-fade">
       <div

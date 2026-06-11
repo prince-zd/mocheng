@@ -516,6 +516,8 @@ main > section {
 
 @media (max-width: 640px) {
   .moyun-generator-grid {
+    display: flex !important;
+    flex-direction: column;
     height: calc(100svh - 150px);
     min-height: 0;
     overflow: hidden;
@@ -523,7 +525,8 @@ main > section {
 
   .generator-editor-panel {
     display: flex !important;
-    height: 100%;
+    flex: 1 1 auto;
+    height: auto;
     min-height: 0;
     flex-direction: column;
     overflow: hidden;
@@ -557,13 +560,7 @@ main > section {
   }
 
   .generator-save-control {
-    flex: 0 0 auto;
-    margin-top: auto;
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-    padding-top: 0.75rem;
-    background: linear-gradient(180deg, rgba(247, 244, 237, 0), rgba(247, 244, 237, 0.96) 34%);
+    display: none;
   }
 
   .generator-editor-panel h1 {
@@ -587,18 +584,31 @@ main > section {
   }
 
   .generator-preview-panel {
-    height: calc(100svh - 150px);
-    min-height: 640px;
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .generator-preview-actions {
-    margin-top: auto !important;
-    margin-bottom: 0;
-    padding-top: 0;
+    display: none;
+  }
+
+  .generator-preview-panel > .relative {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
   }
 
   .generator-preview-panel .paper-texture:not(.single-mode-paper) {
-    height: 488px !important;
+    flex: 1 1 auto;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  .generator-mobile-actions {
+    flex: 0 0 auto;
+    margin-top: auto;
   }
 
   .paper-texture.single-mode-paper {
