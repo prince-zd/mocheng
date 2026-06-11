@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'Moyun-WangXizhi-SCFwxz';
-  src: url('/fonts/wang-xizhi-lantingxu.ttf') format('truetype');
+  src: url('./assets/fonts/wang-xizhi-lantingxu.ttf') format('truetype');
   font-display: block;
 }
 
 @font-face {
   font-family: 'AaYZQDBTB';
-  src: url('/fonts/yan-zhenqing-duobaota.ttf') format('truetype');
+  src: url('./assets/fonts/yan-zhenqing-duobaota.ttf') format('truetype');
   font-display: block;
 }
 

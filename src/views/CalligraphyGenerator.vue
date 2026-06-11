@@ -622,6 +622,11 @@ const fontOptions: FontOption[] = [
   }
 ]
 
+const fontFileUrls: Record<string, string> = {
+  'yan-zhenqing-duobaota.ttf': new URL('../assets/fonts/yan-zhenqing-duobaota.ttf', import.meta.url).href,
+  'wang-xizhi-lantingxu.ttf': new URL('../assets/fonts/wang-xizhi-lantingxu.ttf', import.meta.url).href
+}
+
 const form = reactive<GeneratorForm>({
   text: '海纳百川有容乃大',
   fontFamily: fontOptions[0].value,
@@ -1061,8 +1066,10 @@ const getFontFamily = (font?: FontOption): string => {
 
 const verifyFont = async (font: FontOption): Promise<void> => {
   try {
-    if (font.fileName) {
-      const response = await fetch(`/fonts/${font.fileName}`, {
+    const fontFileUrl = font.fileName ? fontFileUrls[font.fileName] : undefined
+
+    if (fontFileUrl) {
+      const response = await fetch(fontFileUrl, {
         method: 'GET',
         cache: 'reload'
       })
